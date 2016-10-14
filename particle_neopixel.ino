@@ -12,6 +12,13 @@
 #include "application.h"
 
 
+
+/* ======================= prototypes =============================== */
+
+void runEffectsLoop()
+
+
+
 SYSTEM_MODE(AUTOMATIC);
 
 void setup() {
@@ -23,6 +30,10 @@ void setup() {
 }
 
 void loop() {
+  runEffectsLoop();
+}
+
+void runEffectsLoop() {
   if(bounce) {
     bouncingColoredBalls();
   }

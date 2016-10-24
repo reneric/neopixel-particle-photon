@@ -130,9 +130,9 @@ int color(String command){
     }else if(command == "running"){
          digitalWrite(led, HIGH);
          setRunning(true);
-    }else if(command == "kitt"){
+    }else if(command == "running"){
          digitalWrite(led, HIGH);
-         setKitt(true);
+         setRunning(true);
     }
     return 1;
 
@@ -459,7 +459,7 @@ void setPixelHeatColor (int Pixel, byte temperature) {
 }
 
 void centerToOutside(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay) {
-  for(int i =((PIXEL_COUNT-EyeSize)/2); i>=0; i--) {
+  for(int i =((NUM_LEDS-EyeSize)/2); i>=0; i--) {
     setAll(0,0,0);
 
     setPixel(i, red/10, green/10, blue/10);
@@ -468,11 +468,11 @@ void centerToOutside(byte red, byte green, byte blue, int EyeSize, int SpeedDela
     }
     setPixel(i+EyeSize+1, red/10, green/10, blue/10);
 
-    setPixel(PIXEL_COUNT-i, red/10, green/10, blue/10);
+    setPixel(NUM_LEDS-i, red/10, green/10, blue/10);
     for(int j = 1; j <= EyeSize; j++) {
-      setPixel(PIXEL_COUNT-i-j, red, green, blue);
+      setPixel(NUM_LEDS-i-j, red, green, blue);
     }
-    setPixel(PIXEL_COUNT-i-EyeSize-1, red/10, green/10, blue/10);
+    setPixel(NUM_LEDS-i-EyeSize-1, red/10, green/10, blue/10);
 
     showStrip();
     delay(SpeedDelay);
@@ -481,7 +481,7 @@ void centerToOutside(byte red, byte green, byte blue, int EyeSize, int SpeedDela
 }
 
 void outsideToCenter(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay) {
-  for(int i = 0; i<=((PIXEL_COUNT-EyeSize)/2); i++) {
+  for(int i = 0; i<=((NUM_LEDS-EyeSize)/2); i++) {
     setAll(0,0,0);
 
     setPixel(i, red/10, green/10, blue/10);
@@ -490,11 +490,11 @@ void outsideToCenter(byte red, byte green, byte blue, int EyeSize, int SpeedDela
     }
     setPixel(i+EyeSize+1, red/10, green/10, blue/10);
 
-    setPixel(PIXEL_COUNT-i, red/10, green/10, blue/10);
+    setPixel(NUM_LEDS-i, red/10, green/10, blue/10);
     for(int j = 1; j <= EyeSize; j++) {
-      setPixel(PIXEL_COUNT-i-j, red, green, blue);
+      setPixel(NUM_LEDS-i-j, red, green, blue);
     }
-    setPixel(PIXEL_COUNT-i-EyeSize-1, red/10, green/10, blue/10);
+    setPixel(NUM_LEDS-i-EyeSize-1, red/10, green/10, blue/10);
 
     showStrip();
     delay(SpeedDelay);
@@ -503,7 +503,7 @@ void outsideToCenter(byte red, byte green, byte blue, int EyeSize, int SpeedDela
 }
 
 void leftToRight(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay) {
-  for(int i = 0; i < PIXEL_COUNT-EyeSize-2; i++) {
+  for(int i = 0; i < NUM_LEDS-EyeSize-2; i++) {
     setAll(0,0,0);
     setPixel(i, red/10, green/10, blue/10);
     for(int j = 1; j <= EyeSize; j++) {
@@ -517,7 +517,7 @@ void leftToRight(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, i
 }
 
 void rightToLeft(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay) {
-  for(int i = PIXEL_COUNT-EyeSize-2; i > 0; i--) {
+  for(int i = NUM_LEDS-EyeSize-2; i > 0; i--) {
     setAll(0,0,0);
     setPixel(i, red/10, green/10, blue/10);
     for(int j = 1; j <= EyeSize; j++) {

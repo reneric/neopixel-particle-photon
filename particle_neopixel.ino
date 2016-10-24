@@ -39,7 +39,7 @@ void runEffectsLoop() {
     twinkleRandom(20, 100, false);
   };
   if(strobeOn) {
-    strobe(0xff, 0xff, 0xff, 10, 50, 1000);
+    strobe(0xff, 0xff, 0xff, 1, 50, 1000);
   };
   if(fireOn) {
     fire(55,120,1);

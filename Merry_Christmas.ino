@@ -158,9 +158,8 @@ void doMusic() {
 }
 
 void doRandomLights() {
-
   unsigned int ms_per_minute = 1000 * 60;
-    MS_per_beat = ms_per_minute / bpm;
+  MS_per_beat = ms_per_minute / bpm;
 
   randomSeed(analogRead(0));
   for (int channelIndex = 0; channelIndex < CHANNEL_COUNT; channelIndex++) {

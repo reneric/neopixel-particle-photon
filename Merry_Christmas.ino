@@ -37,7 +37,6 @@ unsigned int bpm = 284;
 unsigned int MS_per_beat = 0;
 
 // Counters
-uint8_t dCounter = 0;
 uint8_t section = 0;
 uint8_t beatCounter = 0;
 uint8_t volumeCouter = 0;
@@ -154,13 +153,6 @@ void doMusic() {
       musicStarted = false;
     }
 
-    // Fix bpm drift
-    //if (section == 4) {
-      //if (dCounter == 0) {
-        //delay(100);
-      //}
-      //dCounter++;
-    //}
     delay(MS_per_beat);
   }
 }
